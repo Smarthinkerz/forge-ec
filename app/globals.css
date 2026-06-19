@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jb);
+
+  /* Dark (default) — RGB channels for Tailwind alpha support. */
+  --bg: 11 14 20;
+  --surface: 18 22 32;
+  --surface-2: 26 31 44;
+  --border: 38 44 58;
+  --text: 231 234 240;
+  --text-dim: 139 147 167;
+  --forge: 255 107 44;
+  --forge-bright: 255 138 76;
+  --cyan: 56 189 248;
+  --green: 52 211 153;
+  --red: 248 113 113;
+}
+
+.light {
+  --bg: 246 247 249;
+  --surface: 255 255 255;
+  --surface-2: 240 242 245;
+  --border: 226 230 236;
+  --text: 22 26 34;
+  --text-dim: 91 100 114;
+  --forge: 234 88 12;
+  --forge-bright: 249 115 22;
+  --cyan: 2 132 199;
+  --green: 5 150 105;
+  --red: 220 38 38;
+}
+
+* { border-color: rgb(var(--border)); }
+
+html { scroll-behavior: smooth; }
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+[dir="rtl"] .flip-rtl { transform: scaleX(-1); }
+::selection { background: rgb(var(--forge) / 0.35); }
+
+.tnum { font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+.hairline { height: 1px; background: rgb(var(--border)); }
